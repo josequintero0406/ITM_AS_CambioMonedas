@@ -2,7 +2,7 @@
     Cambios de Moneda
 </mat-toolbar>
 <div>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" style="margin-left: 40%;">
         <mat-label>Moneda</mat-label>
         <mat-select [(value)]="idMonedaSeleccion" (selectionChange)="listar()">
             <mat-option *ngFor="let m of this.monedas" [value]="m.id">
@@ -11,7 +11,7 @@
         </mat-select>
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" style="margin-left: 40%;">
         <mat-label>Buscar</mat-label>
         <input matInput [matDatepicker]="picker" [(ngModel)]="fechaBusqueda">
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -21,10 +21,11 @@
     <button mat-stroked-button color="primary" (click)="buscar()">Buscar</button>
 </div>
 <div>
-    <button mat-raised-button color="primary" (click)="nuevo()">Agregar</button>
-    <button mat-raised-button color="accent" (click)="modificar()">Modificar</button>
-    <button mat-raised-button color="warn" (click)="verificarEliminar()">Eliminar</button>
-
+    <div style="margin-left: 40%;">
+        <button mat-raised-button color="primary" (click)="nuevo()">Agregar</button>
+        <button style="margin-left: 10px;" mat-raised-button color="accent" (click)="modificar()">Modificar</button>
+        <button style="margin-left: 10px;" mat-raised-button color="warn" (click)="verificarEliminar()">Eliminar</button><br><br>
+    </div>
     <ngx-datatable class={{tema}} [headerHeight]="50" [footerHeight]="50" [rowHeight]="20" [rows]="cambios"
         [columns]="columnas" [columnMode]="modoColumna.force" [limit]="10" [selectionType]="tipoSeleccion.single"
         (activate)="onActivate($event)" [rowHeight]="'auto'">

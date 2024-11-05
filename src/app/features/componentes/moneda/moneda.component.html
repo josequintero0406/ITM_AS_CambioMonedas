@@ -2,17 +2,18 @@
     Monedas
 </mat-toolbar>
 <div>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" style="margin-left: 40%;">
         <mat-label>Buscar</mat-label>
         <input matInput [(ngModel)]="textoBusqueda">
     </mat-form-field>
     <button mat-stroked-button color="primary" (click)="buscar()">Buscar</button>
 </div>
 <div>
-    <button mat-raised-button color="primary" (click)="nuevo()">Agregar</button>
-    <button mat-raised-button color="accent" (click)="modificar()">Modificar</button>
-    <button mat-raised-button color="warn" (click)="verificarEliminar()">Eliminar</button>
-
+    <div style="margin-left: 40%;">
+        <button mat-raised-button color="primary" (click)="nuevo()">Agregar</button>
+        <button style="margin-left: 10px;" mat-raised-button color="accent" (click)="modificar()">Modificar</button>
+        <button style="margin-left: 10px;" mat-raised-button color="warn" (click)="verificarEliminar()">Eliminar</button><br><br>
+    </div>
     <ngx-datatable class={{tema}} [headerHeight]="50" [footerHeight]="50" [rowHeight]="20" [rows]="monedas"
         [columns]="columnas" [columnMode]="modoColumna.force" [limit]="10" [selectionType]="tipoSeleccion.single"
         (activate)="onActivate($event)" [rowHeight]="'auto'">
